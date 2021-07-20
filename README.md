@@ -32,6 +32,14 @@
 
 - yarn add -D webpack-dev-server 每次修改完文件都要重新打包才能看到效果，我们可以使用webpack-dev-server来搭建一个本地服务器来实时更新。
 - yarn add -D @babel/preset-react babel-loader @babel/core
-- yarn add -D webpack-merge 合并webpack配置文件
-- yarn add -D file-loader style-loader css-loader
-# 
+- yarn add -D webpack-merge 合并webpack配置文件  报错merge不是一个函数时，调用WebpackMerge.merge成功解决
+- yarn add -D file-loader style-loader css-loader  出现报错，有可能是安装包的版本问题
+
+# webpack配置
+- 打包后的图片路径、名称配置
+  - 在“test: /.*\.(gif|png|jpe?g|svg)$/”中“name: 'static/images/[name][hash:7].[ext]'”,
+- 打包后的
+
+# package.json中的scripts配置
+- "dev": "webpack --config webpack.dev.js"
+  - –config是告诉webpack通过什么配置文件打包

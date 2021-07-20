@@ -1,44 +1,12 @@
-// const merge = require('webpack-merge');
-// const common = require('./webpack.common.js');
+const WebpackMerge = require('webpack-merge');
+const common = require('./webpack.common.js');
 const path = require('path')
-module.exports = {
+
+module.exports = WebpackMerge.merge(common, {
   mode: 'development',
-  module: {
-    rules: [{
-        test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
-        use: [{
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-react']
-          }
-        }]
-      },
-      {
-        test: /\.css$/,
-        use: [
-          "style-loader",
-          "css-loader",
-          "postcss-loader"
-        ]
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          'style-loader', 'css-loader', 'sass-loader'
-        ]
-      },
-      {
-        test: /.*\.(gif|png|jpe?g|svg)$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-            context: path.resolve(__dirname, 'static'),
-            publicPath: '../',
-          }
-        }]
-      },
-    ]
+  entry: path.resolve(__dirname, `src/index.js`),
+  output:{
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'js/[name].[hash:8].js',
   }
-}
+})
