@@ -35,6 +35,7 @@
 - yarn add -D webpack-merge 合并webpack配置文件  报错merge不是一个函数时，调用WebpackMerge.merge成功解决
 - yarn add -D file-loader style-loader css-loader  出现报错，有可能是安装包的版本问题
 - npm install mini-css-extract-plugin -D 把所有样式包括css、less都打包到一个css文件 common.css中，然后再 link 进页面
+- yarn add -D html-webpack-plugin@3.2.0  用于编译 Webpack 项目中的 html 类型的文件
 
 # webpack配置
 - 打包后的图片路径、名称配置
@@ -42,6 +43,9 @@
 - js文件打包配置  在output里
 - css文件打包配置
   - 安装mini-css-extract-plugin插件，在webpack.common.js中配置plugins，指明打包输出路径、文件名；在css、sass的rules中配置loader
+- html文件打包配置 
+  - 安装html-webpack-plugin插件 
+  - 配置插件 new htmlWebpackPlugin({template: html文件的入口, filename: 输出文件路径配置})
 
 # package.json中的scripts配置
 - "dev": "webpack --config webpack.dev.js"

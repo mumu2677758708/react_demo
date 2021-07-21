@@ -8,5 +8,10 @@ module.exports = WebpackMerge.merge(common, {
   output:{
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[hash:8].js',
+  },
+  devServer: {
+    contentBase: './index.html',
+    hot: true,
+    port: 3000
   }
 })

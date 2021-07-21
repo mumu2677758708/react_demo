@@ -1,10 +1,19 @@
 const path = require('path')
 let MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const htmlWebpackPlugin = require('html-webpack-plugin');
+console.log(htmlWebpackPlugin.options)
+console.log('1212---------')
 module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: "css/common.css"
     }),
+    new htmlWebpackPlugin({
+      title: 'react练习',
+      template: path.resolve(__dirname,'public/index.html'),
+      filename: path.resolve(__dirname, 'dist/index.html'),
+      hash: true
+    })
   ],
   module: {
     rules: [{
