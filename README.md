@@ -50,3 +50,14 @@
 # package.json中的scripts配置
 - "dev": "webpack --config webpack.dev.js"
   - –config是告诉webpack通过什么配置文件打包
+
+# babel安装
+- "@babel/core": "^7.7.4",
+- "@babel/preset-env": "^7.7.4",
+- "@babel/preset-react": "^7.7.4", 翻译JSX 语法的插件。
+- "babel-preset-es2015" 翻译es6语法的插件
+- "babel-loader": "^8.0.6",
+- 7版本以上，.babelrc文件配置是"presets": ["@babel/env", "@babel/react"]
+- 6版本以上，.babelrc文件配置是"presets": ["env", "react", "es2015", "stage-2"],
+- 注意：报babel-loader的错，是因为各版本问题
+- babel-core与@babel/core的区别：自Babel 7起，Babel团队改用作用域软件包，因此您现在必须使用@babel/core而不是babel-core。但实质上，@babel/core只是babel-core的较新版本。这样做是为了更好地区分哪些软件包是官方软件包，哪些是第三方软件包.

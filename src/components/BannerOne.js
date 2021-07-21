@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import Swiper from 'swiper/swiper-bundle.min.js';
 import "swiper/swiper-bundle.min.css";
 
 class BannerOne extends Component {
 	renderSlide(imgData, index){
 		let { imgUrlOne } = imgData; 
-		if(imgUrlOne==""){
+		if(imgUrlOne === ""){
 			return("");
 		}
 		return(
@@ -15,7 +15,7 @@ class BannerOne extends Component {
 		)
 	}
 	componentDidMount() {
-		var swiperCard = new Swiper('.swiper-container-banner-one', {
+		 new Swiper('.swiper-container-banner-one', {
 			autoplay:{
         delay: 5000,    // 自动播放间隔，单位ms
         disableOnInteraction: false, // 值为false表示用户操作swiper之后，不会停止播放，值true停止
